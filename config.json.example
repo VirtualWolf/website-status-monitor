@@ -4,5 +4,8 @@
     "smtpUsername": "user@example.com",
     "smtpPassword": "password",
     "fromUser": "Example User",
-    "url": "https://example.com"
+    "urls": [
+        "https://example.com",
+        "https://foobar.com"
+    ]
 }

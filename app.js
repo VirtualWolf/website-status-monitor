@@ -12,21 +12,22 @@ const transporter = mailer.createTransport({
         user: config.smtpUsername,
         pass: config.smtpPassword,
     },
-}, {
-    from: `${config.fromUser} <${config.smtpUsername}>`,
-    to: config.smtpUsername,
 });
 
-request
-    .get(config.url)
-    .catch(async err => {
-		try {
-            await transporter.sendMail({
-                subject: `[${config.fromUser.toLocaleUpperCase()}] ${err.message}`,
-                text: 'Uh oh.',
-            });
-		} catch (err) {
-			console.log('Error sending email', err.message);
-		}
-    });
+for (const url of config.urls) {
+    request
+        .get(url)
+        .catch(async err => {
+            try {
+                await transporter.sendMail({
+                    from: `${config.fromUser} <${config.smtpUsername}>`,
+                    to: config.smtpUsername,
+                    subject: `[${url.replace(/https?:\/\//, '')}] ${err.message}`,
+                    text: 'Uh oh.',
+                });
+            } catch (err) {
+                console.log('Error sending email', err.message);
+            }
+        });
+}
 
