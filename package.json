@@ -1,0 +1,24 @@
+{
+  "name": "website-status-monitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/VirtualWolfCo/website-status-monitor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/VirtualWolfCo/website-status-monitor#readme",
+  "dependencies": {
+    "nodemailer": "^4.6.8",
+    "superagent": "^3.8.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-node-style-guide": "^3.0.0"
+  }
+}

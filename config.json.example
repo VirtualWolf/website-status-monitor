@@ -1,0 +1,8 @@
+{
+    "smtpHost": "smtp.example.com",
+    "smtpPort": 465,
+    "smtpUsername": "user@example.com",
+    "smtpPassword": "password",
+    "fromUser": "Example User",
+    "url": "https://example.com"
+}
